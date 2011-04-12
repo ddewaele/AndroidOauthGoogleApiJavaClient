@@ -1,5 +1,5 @@
 Google APIs Client Library for Java can be found on 
-http://blog.doityourselfandroid.com/2011/04/12/google-apis-client-library-java/
+http://blog.doityourselfandroid.com/2011/04/12/oauth-android-google-apis-client-library-java/
 
 The code has a dependency towards the google-api-java-client library.
 The library can be downloaded here : http://code.google.com/p/google-api-java-client/ 
