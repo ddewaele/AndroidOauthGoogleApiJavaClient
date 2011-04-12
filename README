@@ -1,0 +1,20 @@
+Google APIs Client Library for Java can be found on 
+http://blog.doityourselfandroid.com/2011/04/12/google-apis-client-library-java/
+
+The code has a dependency towards the google-api-java-client library.
+The library can be downloaded here : http://code.google.com/p/google-api-java-client/ 
+
+Following is a list of JARs (dependencies) that are required for the project :
+
+google-api-client-1.3.1-alpha.jar
+google-api-client-extensions-1.3.1-alpha.jar
+google-api-client-googleapis-1.3.1-alpha.jar
+
+commons-codec-1.3.jar
+commons-logging-1.1.1.jar
+gson-1.6.jar
+guava-r08.jar
+httpclient-4.0.3.jar
+httpcore-4.0.1.jar
+jackson-core-asl-1.6.5.jar
+jsr305-1.3.9.jar
