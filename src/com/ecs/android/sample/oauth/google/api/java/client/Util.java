@@ -28,7 +28,7 @@ public class Util {
 		result.defaultHeaders = headers;
 		if (!forAuth) {
 			JsonCParser parser = new JsonCParser();
-			parser.jsonFactory = JSON_FACTORY;
+			parser.jsonFactory =  new JacksonFactory();
 			result.addParser(parser);
 		}
 		return result;
@@ -63,9 +63,4 @@ public class Util {
 		return sb.toString();
 	}
 	
-//	public static void setUpTransport() {
-//		    JsonCParser parser = new JsonCParser();
-//		    parser.jsonFactory = Util.JSON_FACTORY;
-//		    Util.TRANSPORT.addParser(parser);
-//		  }	
 }
