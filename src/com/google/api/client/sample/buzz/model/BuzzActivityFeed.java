@@ -18,8 +18,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.SharedPreferences;
+
 import com.ecs.android.sample.oauth.google.api.java.client.Util;
+import com.google.api.client.googleapis.json.JsonCParser;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
+import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.client.util.Key;
 
 /**
@@ -56,13 +61,18 @@ public class BuzzActivityFeed {
 
   /**
    * List the user's Buzz activities.
+ * @param prefs 
    *
    * @return Buzz activities feed response from the Buzz server
    * @throws IOException any I/O exception
    */
-  public static BuzzActivityFeed list() throws IOException {
-    HttpRequest request = Util.TRANSPORT.buildGetRequest();
-    request.url = BuzzUrl.forMyActivityFeed();
-    return request.execute().parseAs(BuzzActivityFeed.class);
+  public static BuzzActivityFeed list(SharedPreferences prefs) throws IOException {
+	  HttpRequestFactory createRequestFactory = Util.createRequestFactory(Util.TRANSPORT, prefs);
+	  HttpRequest request = createRequestFactory.buildGetRequest(BuzzUrl.forMyActivityFeed());
+
+	  JsonCParser parser = new JsonCParser();
+	  parser.jsonFactory =  new JacksonFactory();
+	  request.addParser(parser);
+	  return request.execute().parseAs(BuzzActivityFeed.class);
   }
 }

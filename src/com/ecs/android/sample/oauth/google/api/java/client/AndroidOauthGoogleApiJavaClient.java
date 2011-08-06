@@ -22,7 +22,7 @@ public class AndroidOauthGoogleApiJavaClient extends Activity {
 		setContentView(R.layout.main);
 		this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		//Util.setUpTransport();
-		Util.setupAuthorizer(prefs);
+		//Util.setupAuthorizer(prefs);
 		
 
 		Button launchOauth = (Button) findViewById(R.id.btn_launch_oauth);
@@ -63,7 +63,7 @@ public class AndroidOauthGoogleApiJavaClient extends Activity {
 		edit.remove(Constants.PREF_KEY_OAUTH_TOKEN);
 		edit.remove(Constants.PREF_KEY_OAUTH_TOKEN_SECRET);
 		edit.commit();
-		Util.setupAuthorizer(prefs);
+		//Util.setupAuthorizer(prefs);
 	}
 	
     /**
@@ -72,7 +72,7 @@ public class AndroidOauthGoogleApiJavaClient extends Activity {
 	private void performApiCall() {
 		String output=null;
 		try {
-			output = Util.executeApiCall();
+			output = Util.executeApiCall(prefs);
 			textView.setText(output);
 		} catch (Exception ex) {
 			ex.printStackTrace();

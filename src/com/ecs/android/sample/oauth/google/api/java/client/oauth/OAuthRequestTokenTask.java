@@ -56,7 +56,7 @@ public class OAuthRequestTokenTask extends AsyncTask<Void, Void, Void> {
 			Log.i(TAG, "Retrieving request token from Google servers");
 
 			GoogleOAuthGetTemporaryToken temporaryToken = new GoogleOAuthGetTemporaryToken();
-			temporaryToken.transport = Util.AUTH_TRANSPORT;
+			temporaryToken.transport = Util.TRANSPORT;
 			temporaryToken.signer = signer;
 			temporaryToken.consumerKey = Constants.CONSUMER_KEY;
 			temporaryToken.scope = Constants.SCOPE;

@@ -46,7 +46,7 @@ public class RetrieveAccessTokenTask extends AsyncTask<Uri, Void, Void> {
 			signer.clientSharedSecret = Constants.CONSUMER_SECRET;
 
 			GoogleOAuthGetAccessToken accessToken = new GoogleOAuthGetAccessToken();
-			accessToken.transport = Util.AUTH_TRANSPORT;
+			accessToken.transport = Util.TRANSPORT;
 			accessToken.temporaryToken = requestToken;
 			accessToken.signer = signer;
 			accessToken.consumerKey = Constants.CONSUMER_KEY;
